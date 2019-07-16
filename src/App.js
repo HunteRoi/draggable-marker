@@ -26,7 +26,7 @@ export default class App extends React.Component {
   onDragEnd = ({lngLat}, guid) => {
     const {participants} = this.state;
     const index = participants.indexOf(participants.find(p => p.guid === guid));
-    if (index && index !== -1) {
+    if (index !== -1) {
       participants[index].location = [lngLat.lng, lngLat.lat];
       this.setState({participants});
     }
